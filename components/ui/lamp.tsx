@@ -7,14 +7,14 @@ export default function LampDemo() {
   return (
     <LampContainer>
       <motion.h1
-        initial={{ opacity: 0.5, y: -75 }}
-        whileInView={{ opacity: 1, y: -160 }}
+        initial={{ opacity: 0.5, y: -140 }}
+        whileInView={{ opacity: 1, y: -180 }}
         transition={{
           delay: 0.3,
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-[--color-highlight1] to-[--color-main] py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="mt-8 bg-gradient-to-br from-[--color-highlight1] to-[--color-main] py-4 bg-clip-text text-center text-5xl font-medium tracking-tight text-transparent md:text-6xl"
       >
         code:projects
       </motion.h1>
@@ -38,8 +38,8 @@ export const LampContainer = ({
     >
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: "10rem" }}
+          whileInView={{ opacity: 1, width: "20rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -54,8 +54,8 @@ export const LampContainer = ({
           <div className="absolute  w-40 h-[100%] left-0 bg-[--color-background]  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: "10rem" }}
+          whileInView={{ opacity: 1, width: "20rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -83,8 +83,8 @@ export const LampContainer = ({
           className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-[--color-highlight-opacity2] blur-2xl"
         ></motion.div>
         <motion.div
-          initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
+          initial={{ width: "10rem" }}
+          whileInView={{ width: "20rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,

@@ -5,7 +5,7 @@ import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
   return (
-    <main className="mt-[8rem]">
+    <main>
       <Navbar />
       <Quinch />
     </main>
