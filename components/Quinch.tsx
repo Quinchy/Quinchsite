@@ -23,11 +23,11 @@ function Quinch() {
         <div className='flex flex-col-reverse items-center gap-12 md:flex-row md:gap-20'>
           <div className='flex flex-col items-center md:items-start'>
             {/* Devname and Links Section */}
-            <div className='flex gap-5 content-center'>
+            <div className='flex gap-3 md:gap-5 content-center'>
               {/* Devname */}
-              <p className='text-[4.5rem] text-[--color-highlight] leading-none font-semibold tracking-[-0.08em] cursor-default'>quinch</p>
+              <p className='text-[3rem] md:text-[4.5rem] text-[--color-highlight] leading-none font-semibold tracking-[-0.08em] cursor-default'>quinch</p>
               {/* Links */}
-              <div className='inline-flex flex-row items-center gap-3 mt-2'>
+              <div className='inline-flex flex-row items-center gap-0 md:gap-3 mt-2'>
                 <LinkPreview url="https://github.com/QuinchY" imageSrc="/images/github-profile.png" isStatic height={200} width={200}>
                   <div className='cursor-pointer rounded-lg p-3 hover:bg-[--color-main-light-opacity] hover:brightness-125 ease-in-out duration-500'>
                     <svg className='opacity-90' width="20" height="20" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@ function Quinch() {
               </div>
             </div>
             {/* Short Text Section */}
-            <p className='mt-7 ml-2 text-[1.40rem] text-[--color-main-light] opacity-90 tracking-tighter cursor-default'>A Glorious Software Developer.</p>
+            <p className='mt-7 ml-2 text-[1.1rem] md:text-[1.40rem] text-[--color-main-light] opacity-90 tracking-tighter cursor-default'>A Glorious Software Developer.</p>
           </div>
           <Image
             src={profilePic}
@@ -104,7 +104,7 @@ function Quinch() {
       {/* 2. About Me Content */}
       <div className='mt-20 mb-10 flex flex-col items-center gap-5'>
         <p className='text-[2rem] font-bold text-[--color-highlight] self-center'>About Me</p>
-        <p className='text-center self-center text-[--color-main-light] mx-12 text-base md:mx-[39rem]'>
+        <p className='text-center self-center text-[--color-main-light] mx-5 text-base md:mx-[39rem]'>
         Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
         I'm a 21-year-old student from Bataan Peninsula State University - Main Campus, as well as a self-taught <span className='text-[--color-highlight]'>Software Developer from Bataan, Philippines</span>. 
         <br />
@@ -119,7 +119,7 @@ function Quinch() {
       {/* 4. Projects content */}
       <div id='projects-section'  className='flex flex-col w-full'>
         <LampDemo />
-        <div className="-mt-[27rem] mb-40 grid grid-cols-1 justify-items-center gap-2 md:grid-cols-2 md:mx-[39.5rem]">
+        <div className="-mt-[20rem] mb-40 grid grid-cols-1 justify-items-center gap-2 md:grid-cols-2 md:mx-[39.5rem]">
           <LinkPreview url="https://github.com/Quinchy/Pasabuy">
             <div className='cursor-pointer'>
               <GlareCard className='flex flex-col items-center justify-center gap-10 px-5'>
@@ -178,9 +178,9 @@ function Quinch() {
         </div>
       </div>
       {/* 5. Footer */}
-      <div className='flex flex-row items-center gap-[7rem] mx-8 mb-10 pt-10 text-[--color-main-light] border-t border-[--color-main-light-opacity2]'>
+      <div className='flex flex-row items-center gap-[2rem] md:gap-[7rem] mx-3 mb-10 pt-10 text-[--color-main-light] border-t border-[--color-main-light-opacity2]'>
         {/* Links */}
-        <div className='inline-flex flex-row items-center gap-3 mt-2'>
+        <div className='inline-flex flex-row items-center gap-0 md:gap-3 mt-2'>
           <LinkPreview url="https://github.com/QuinchY" imageSrc="/images/github-profile.png" isStatic height={200} width={200}>
             <div className='cursor-pointer rounded-lg p-3 hover:bg-[--color-main-light-opacity] hover:brightness-125 ease-in-out duration-500'>
               <svg className='opacity-90' width="20" height="20" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg">

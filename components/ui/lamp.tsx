@@ -6,19 +6,19 @@ import { cn } from "@/lib/utils";
 export default function LampDemo() {
   return (
     <LampContainer>
-      <motion.h1
-        initial={{ opacity: 0.5, y: -140 }}
-        whileInView={{ opacity: 1, y: -180 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="mt-8 bg-gradient-to-br from-[--color-highlight1] to-[--color-main] py-4 bg-clip-text text-center text-5xl font-medium tracking-tight text-transparent md:text-6xl"
-      >
-        code:projects
-      </motion.h1>
-    </LampContainer>
+    <motion.h1
+      initial={{ opacity: 0.5, y: -50 }} // Adjusted for mobile
+      whileInView={{ opacity: 1, y: -60 }} // Adjusted for mobile
+      transition={{
+        delay: 0.3,
+        duration: 0.8,
+        ease: "easeInOut",
+      }}
+      className="mt-6 bg-gradient-to-br from-[--color-highlight1] to-[--color-main] py-2 bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent sm:mt-8 sm:py-4 sm:text-5xl md:text-6xl"
+    >
+      code:projects
+    </motion.h1>
+  </LampContainer>
   );
 }
 
