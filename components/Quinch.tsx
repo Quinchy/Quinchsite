@@ -20,7 +20,7 @@ function Quinch() {
     <div className='flex flex-col items-center mt-[8rem] gap-32'>
       {/* 1. Heading */}
       <div className='flex flex-col items-center gap-5 md:items-start'>
-        <div className='flex flex-col-reverse items-center gap-12 md:flex-row md:gap-20'>
+        <div className='flex flex-col-reverse items-center gap-12 md:flex-row md:gap-40'>
           <div className='flex flex-col items-center md:items-start'>
             {/* Devname and Links Section */}
             <div className='flex gap-3 md:gap-5 content-center'>
@@ -104,7 +104,7 @@ function Quinch() {
       {/* 2. About Me Content */}
       <div className='mt-20 mb-10 flex flex-col items-center gap-5'>
         <p className='text-[2rem] font-bold text-[--color-highlight] self-center'>About Me</p>
-        <p className='text-center self-center text-[--color-main-light] mx-5 text-base md:mx-[39rem]'>
+        <p className='text-center self-center text-[--color-main-light] mx-5 text-base md:mx-[35rem]'>
         Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
         I'm a 21-year-old student from Bataan Peninsula State University - Main Campus, as well as a self-taught <span className='text-[--color-highlight]'>Software Developer from Bataan, Philippines</span>. 
         <br />
@@ -117,9 +117,9 @@ function Quinch() {
         </p>
       </div>
       {/* 4. Projects content */}
-      <div id='projects-section'  className='flex flex-col w-full'>
+      <div id='projects-section'  className='flex flex-col w-full -mt-20 md:-mt-40'>
         <LampDemo />
-        <div className="-mt-[20rem] mb-40 grid grid-cols-1 justify-items-center gap-2 md:grid-cols-2 md:mx-[39.5rem]">
+        <div className="-mt-[20rem] mb-40 grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 md:mx-[39.5rem]">
           <LinkPreview url="https://github.com/Quinchy/Pasabuy">
             <div className='cursor-pointer'>
               <GlareCard className='flex flex-col items-center justify-center gap-10 px-5'>
@@ -130,7 +130,7 @@ function Quinch() {
                   height={300}
                   placeholder='empty'
                   quality={100}
-                  className='rounded'
+                  className='rounded-[0.75rem]'
                 />
                 <div className='flex flex-col gap-2'>
                   <p className='text-[1.25rem] font-bold text-[--color-highlight]'>➡ PasaBuy</p>
@@ -149,6 +149,7 @@ function Quinch() {
                   height={300}
                   placeholder='empty'
                   quality={100}
+                  className='rounded-[0.75rem]'
                 />
                 <div className='flex flex-col gap-2'>
                   <p className='text-[1.25rem] font-bold text-[--color-highlight]'>➡ DMJH Clinic Website</p>
@@ -167,6 +168,7 @@ function Quinch() {
                   height={300}
                   placeholder='empty'
                   quality={100}
+                  className='rounded-[0.75rem]'
                 />
                 <div className='flex flex-col gap-2'>
                   <p className='text-[1.25rem] font-bold text-[--color-highlight]'>➡ OnlyFunds</p>
@@ -178,7 +180,7 @@ function Quinch() {
         </div>
       </div>
       {/* 5. Footer */}
-      <div className='flex flex-row items-center gap-[2rem] md:gap-[7rem] mx-3 mb-10 pt-10 text-[--color-main-light] border-t border-[--color-main-light-opacity2]'>
+      <div className='flex flex-row items-center gap-[2rem] md:gap-[12rem] mx-3 mb-10 pt-10 text-[--color-main-light] border-t border-[--color-main-light-opacity2]'>
         {/* Links */}
         <div className='inline-flex flex-row items-center gap-0 md:gap-3 mt-2'>
           <LinkPreview url="https://github.com/QuinchY" imageSrc="/images/github-profile.png" isStatic height={200} width={200}>
