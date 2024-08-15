@@ -2,14 +2,13 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import profilePic from '../public/images/quinch_dev_profile_1000_bg_flip.png';
 import bankingSystem from '../public/images/banking_system.png';
 import appointmentSystem from '../public/images/appointment-system.png';
 import peerToPeerDeliverySystem from '../public/images/peer_to_peer_delivery_system.png';
+import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
-import LampDemo from "@/components/ui/lamp";
 import { GlareCard } from '@/components/ui/glare-card';
 
 function Quinch() {
