@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import React from 'react';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={GeistMono.className}>{children}</body>
+      <body className={`${GeistMono.className} flex justify-center items-center`}>
+        <React.StrictMode>{children}</React.StrictMode>
+      </body>
     </html>
   );
 }
