@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -13,20 +13,17 @@ const Navbar = () => {
     }
   };
 
-  const updateWidth = () => {
+  const updateWidth = useCallback(() => {
     if (window.innerWidth >= 1024) {
       setWidth(scrolled ? '40rem' : '45rem');
-    } 
-    else if (window.innerWidth >= 768) {
+    } else if (window.innerWidth >= 768) {
       setWidth(scrolled ? '30rem' : '35rem');
-    } 
-    else if (window.innerWidth >= 640) {
+    } else if (window.innerWidth >= 640) {
       setWidth(scrolled ? '28rem' : '33rem');
-    } 
-    else {
+    } else {
       setWidth(scrolled ? '20rem' : '25rem');
     }
-  };
+  }, [scrolled]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -39,7 +36,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', updateWidth);
     };
-  }, [scrolled]); // Dependency array includes scrolled to update the width on scroll
+  }, [scrolled, updateWidth]); // Add updateWidth to the dependency array
 
   return (
     <motion.div
@@ -47,31 +44,26 @@ const Navbar = () => {
         backgroundColor: 'var(--color-background)', 
         width: '25rem', 
         boxShadow: 'none',
-        marginTop: 'none',
-        marginBottom: 'none',
+        marginTop: 0,
+        marginBottom: 0,
       }}
       animate={{
         backgroundColor: scrolled ? 'var(--color-background-opacity2)' : 'var(--color-background)',
         width: width,
         boxShadow: scrolled ? '0px 4px 15px rgba(0, 0, 0, 0.7)' : 'none',
-        marginTop: scrolled ? '0.5rem' : 'none',
-        marginBottom: scrolled ? '0.5rem' : 'none',
-        transition: {
-          duration: 0.3,
-          backgroundColor: { duration: 0.3 },
-          width: { duration: 0.3 },
-          boxShadow: { duration: 0.3 },
-          marginTop: { duration: 0.3 },
-          marginBottom: { duration: 0.3 },
-          ease: 'easeInOut',
-        },
+        marginTop: scrolled ? '0.5rem' : 0,
+        marginBottom: scrolled ? '0.5rem' : 0,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: 'easeInOut',
       }}
       className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[5] py-2 rounded-2xl"
     >
       <div className="flex justify-center items-center xl:px-[15rem] gap-4 sm:gap-8 md:gap-10 xl:gap-20 text-lg tracking-tighter font-semibold text-[--color-main-light]">
-        <a href="" className="px-4 md:px-6 py-3 md:rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">home</a>
-        <a href="" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">about</a>
-        <a href="" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">projects</a>
+        <a href="#" className="px-4 md:px-6 py-3 md:rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">home</a>
+        <a href="#" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">about</a>
+        <a href="#" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">projects</a>
       </div>
     </motion.div>
   );
