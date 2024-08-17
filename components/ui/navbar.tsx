@@ -68,7 +68,7 @@ const Navbar = () => {
       className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[5] py-2 rounded-2xl"
     >
       <div className="flex justify-center items-center xl:px-[15rem] gap-4 sm:gap-12 md:gap-16 lg:gap-24 text-lg tracking-tighter font-semibold text-[--color-main-light]">
-        <a href="#" className="px-4 md:px-6 py-3 md:rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">home</a>
+        <a href="#" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">home</a>
         <a href="#about-section" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">about</a>
         <a href="#projects-section" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">projects</a>
       </div>
