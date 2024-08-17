@@ -26,7 +26,7 @@ function Quinch() {
     </svg>
   );
   const AboutMe = React.memo(() => (
-    <div className='mt-20 mb-10 flex flex-col items-center gap-5'>
+    <div id='about-section' className='scroll-mt-40 mt-20 mb-10 flex flex-col items-center gap-5'>
       <p className='text-[2rem] lg:text-[3rem] font-bold text-[--color-highlight] self-center'>about:me</p>
       <p className='text-center self-center text-[--color-main-light] text-base'>
       Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
@@ -119,7 +119,7 @@ function Quinch() {
       {/* 2. About Me Content */}
       <AboutMe />
       {/* 4. Projects content */}
-      <div id='projects-section'  className='flex flex-col w-full mt-20 md:mt-40'>
+      <div id='projects-section'  className='scroll-mt-40 flex flex-col w-full mt-20 md:mt-40'>
         <p className='text-[2rem] lg:text-[3rem] font-bold text-[--color-highlight] self-center'>code:projects</p>
         <div className="mt-[5rem] mb-40 grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2">
           <Link href="https://github.com/Quinchy/Pasabuy" target="_blank" passHref>

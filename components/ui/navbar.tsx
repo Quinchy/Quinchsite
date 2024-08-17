@@ -62,8 +62,8 @@ const Navbar = () => {
     >
       <div className="flex justify-center items-center xl:px-[15rem] gap-4 sm:gap-8 md:gap-10 xl:gap-20 text-lg tracking-tighter font-semibold text-[--color-main-light]">
         <a href="#" className="px-4 md:px-6 py-3 md:rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">home</a>
-        <a href="#" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">about</a>
-        <a href="#" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">projects</a>
+        <a href="#about-section" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">about</a>
+        <a href="#projects-section" className="px-4 md:px-6 py-3 rounded-3xl hover:bg-[--color-main-light-opacity2] ease-in-out duration-300">projects</a>
       </div>
     </motion.div>
   );
