@@ -34,7 +34,7 @@ function Quinch() {
     age--;
   }
   const AboutMe = React.memo(() => (
-    <div id='about-section' className='scroll-mt-40 flex flex-col items-center gap-5'>
+    <section id='about-section' className='scroll-mt-40 flex flex-col items-center gap-5'>
       <p className='text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] tracking-[-0.05em] font-bold text-[--color-highlight] self-center ease-in-out duration-300'>about:me</p>
       <p className='text-center self-center text-[--color-main-light] text-base '>
       Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
@@ -47,19 +47,16 @@ function Quinch() {
       I love exploring new technology and passionately learning new things to keep improving and producing up-to-date, quality software with captivating visuals. 
       Outside of coding and tech, my hobbies and interests include gaming, digital art, anime/manga, photography, and animation.
       </p>
-    </div>
+    </section>
   ));
   return (
-    <div className='flex flex-col items-center justify-center mt-[8rem] gap-64 overflow-hidden max-w-6xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48'>
+    <main className='flex flex-col items-center justify-center mt-[8rem] gap-64 overflow-hidden max-w-6xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48'>
       {/* 1. Heading */}
-      <div className='flex flex-col items-center gap-5 md:items-start'>
+      <section className='flex flex-col items-center gap-5 md:items-start'>
         <div className='flex flex-col-reverse items-center gap-12 md:flex-row md:gap-16 lg:gap-32 xl:gap-44 ease-in-out duration-300'>
           <div className='flex flex-col items-center md:items-start'>
-            {/* Devname and Links Section */}
             <div className='flex gap-3 md:gap-5 content-center'>
-              {/* Devname */}
               <p className='text-[3rem] md:text-[4.5rem] text-[--color-highlight] leading-none font-semibold tracking-[-0.08em] cursor-default'>quinch</p>
-              {/* Links */}
               <div className='inline-flex flex-row items-center gap-0 md:gap-3 mt-2'>
                 <Link href="https://github.com/QuinchY" target='_blank' passHref>
                   <div className='cursor-pointer rounded-lg p-3 hover:bg-[--color-main-light-opacity] hover:brightness-125 ease-in-out duration-500'>
@@ -73,7 +70,6 @@ function Quinch() {
                 </Link>
               </div>
             </div>
-            {/* Short Text Section */}
             <p className='mt-7 ml-2 text-[1.1rem] min-[320px]:text-[1rem] md:text-[1.40rem] text-[--color-main-light] opacity-90 tracking-tighter cursor-default'>A Glorious Software Developer.</p>
           </div>
           <Image
@@ -123,13 +119,13 @@ function Quinch() {
             </motion.div>
           </motion.span>
         </motion.button>
-      </div>
+      </section>
       {/* 2. About Me Content */}
       <AboutMe />
       {/* 3. Projects content */}
-      <div id='projects-section'  className='scroll-mt-40 flex flex-col items-center w-full gap-5'>
+      <section id='projects-section'  className='scroll-mt-40 flex flex-col items-center w-full gap-5'>
         <p className='text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] tracking-[-0.05em] font-bold text-[--color-highlight] self-center ease-in-out duration-300'>code:projects</p>
-        <div className=" mb-40 grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 w-fit">
+        <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 w-fit">
           <Link href="https://github.com/Quinchy/Pasabuy" target="_blank" passHref>
             <div className="cursor-pointer">
               <GlareCard className="flex flex-col items-center justify-center gap-10 px-5 w-80">
@@ -197,7 +193,7 @@ function Quinch() {
             </div>
           </Link>
         </div>
-      </div>
+      </section>
       {/* 4. Footer */}
       <footer className='w-full'> 
         <div className='flex flex-row items-center justify-center gap-[2rem] sm:gap-[5rem] md:gap-[8rem] lg:gap-[16rem] mb-10 pt-10 text-[--color-main-light] border-t border-[--color-main-light-opacity2]'>
@@ -221,7 +217,7 @@ function Quinch() {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
 
