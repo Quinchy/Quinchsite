@@ -31,14 +31,19 @@ export default function Home() {
       <p className='text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] tracking-[-0.05em] font-bold text-[--color-highlight] self-center ease-in-out duration-300'>about:me</p>
       <p className='text-center self-center text-[--color-main-light] text-base '>
       Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
-      I'm a {age}-year-old student from Bataan Peninsula State University - Main Campus, as well as a self-taught <span className='text-[--color-highlight]'>Software Developer from Bataan, Philippines</span>. 
+      I'm a {age}-year-old student <span className='text-[--color-highlight]'>Computer Science student</span> from Bataan Peninsula State University - Main Campus. 
       <br />
       <br />
-      I am focused on software development, throughout web, desktop, and mobile apps. 
+      I am focused on improving my <span className='text-[--color-highlight]'>Software Development</span> skills, throughout web, desktop, and mobile. And soon, become a  
+      <span className='text-[--color-highlight]'> Software Engineer</span>.
       <br />
       <br />
-      I love exploring new technology and passionately learning new things to keep improving and producing up-to-date, quality software with captivating visuals. 
-      Outside of coding and tech, my hobbies and interests include gaming, digital art, anime/manga, photography, and animation.
+      I love exploring a wide array of technologies and open at learning new technologies to keep on improving and <span className='text-[--color-highlight]'>producing up-to-date, 
+      innovative software with high-quality visuals</span>.
+      <br />
+      <br />
+      Aside from coding and tech, I enjoy things such as Art, Photography, and Animation. 
+      And my hobbies involve playing games, reading mangas, and watching fictional shows.
       </p>
     </section>
   ));
