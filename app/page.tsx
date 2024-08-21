@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
-import ProfilePic from '@/public/images/quinch_dev_profile_1000_bg_flip.png';
+import ProfilePic from '@/public/images/me.png';
 import BankingSystem from '@/public/images/banking_system.png';
 import AppointmentSystem from '@/public/images/appointment_system.png';
 import PeerToPeerDeliverySystem from '@/public/images/peer_to_peer_delivery_system.png';
@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
               </div>
               <p className='mt-7 ml-2 text-[1.1rem] min-[320px]:text-[1rem] md:text-[1.40rem] text-[--color-main-light] opacity-90 tracking-tighter cursor-default'>
-                A Glorious Software Developer.
+                A Software Developer.
               </p>
             </div>
             <Image
@@ -96,6 +96,7 @@ export default function Home() {
               placeholder='empty'
               quality={100}
               priority
+              className='rounded-full'
             />
           </div>
           {/* Go to Projects Button */}
