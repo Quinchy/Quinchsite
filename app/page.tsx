@@ -31,7 +31,7 @@ export default function Home() {
       <p className='text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] tracking-[-0.05em] font-bold text-[--color-highlight] self-center ease-in-out duration-300'>about:me</p>
       <p className='text-center self-center text-[--color-main-light] text-base '>
       Hello! My name is <span className='text-[--color-highlight]'>Cyril James De Guzman</span>. 
-      I'm a {age}-year-old student <span className='text-[--color-highlight]'>Computer Science student</span> from Bataan Peninsula State University - Main Campus. 
+      I'm a {age}-year-old <span className='text-[--color-highlight]'>Computer Science student</span> from Bataan Peninsula State University - Main Campus. 
       <br />
       <br />
       I am focused on improving my <span className='text-[--color-highlight]'>Software Development</span> skills, throughout web, desktop, and mobile. And soon, become a  
