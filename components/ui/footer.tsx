@@ -7,10 +7,10 @@ const Footer: React.FC = () => {
       <div className="mb-10 sm flex flex-col lg:flex-row items-center justify-center gap-1 border-t border-[--muted] pt-10 sm:gap-[2rem] lg:gap-[16rem]">
         <SocialMediaList />
         <div className="flex flex-col lg:items-end">
-          <small className="text-center lg:text-right text-[0.75rem] min-[520px]:text-[0.75rem] sm:text-[0.85rem]">
+          <small className="text-center lg:text-right text-[0.65rem] min-[520px]:text-[0.75rem] sm:text-[0.85rem]">
             {"© 2024 Cyril James De Guzman. All Rights Reserved."}
           </small>
-          <small className="text-center lg:text-right text-[0.75rem] min-[520px]:text-[0.75rem] sm:text-[0.85rem]">
+          <small className="text-center lg:text-right text-[0.65rem] min-[520px]:text-[0.75rem] sm:text-[0.85rem]">
             {"Made using Next.js, with Tailwind CSS."}
           </small>
         </div>
