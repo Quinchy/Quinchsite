@@ -1,13 +1,14 @@
 'use client'
 
-import React from 'react';
+import Navbar from '@/components/ui/navbar';
 
 function Projects() {
   return (
-    <main>
-
-    </main>
-  )
+    <>
+      <Navbar />
+      <main></main>
+    </>
+  );
 }
 
 export default Projects
