@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-1/2 z-10 -translate-x-1/2 rounded-2xl py-2 transition-all duration-500 ease-in-out select-none ${scrolled ? "mt-2 w-[40rem] bg-nav border-b-[1px] border-b-muted shadow-shadow shadow-lg" : "mt-0 w-[45rem] border-b-0 border-b-background bg-background shadow-none"} `}
+      className={`fixed top-0 left-1/2 z-10 -translate-x-1/2 rounded-2xl py-2 transition-all duration-500 ease-in-out select-none ${scrolled ? "mt-2 w-[20rem] sm:w-[28rem] md:w-[35rem] lg:w-[40rem] bg-nav border-b-[1px] border-b-muted shadow-shadow shadow-lg" : "mt-0 w-[25rem] sm:w-[32rem] md:w-[38rem] lg:w-[45rem] border-b-0 border-b-background bg-background shadow-none"} `}
     >
       <nav className="flex items-center justify-center gap-4 text-lg font-semibold tracking-tighter sm:gap-12 md:gap-16 lg:gap-24 xl:px-[15rem]">
         <Link

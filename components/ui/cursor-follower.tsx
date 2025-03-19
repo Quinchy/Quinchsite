@@ -57,13 +57,13 @@ function CursorFollower() {
         left: pos.x - 20,
         top: pos.y - 18,
         scale: isClicked ? 1.2 : 1,
-        opacity: isClicked ? 0.35 : 0.8,
+        opacity: isClicked ? 0.35 : 1,
       }}
       transition={{
         type: "tween",
         duration: 0.15,
       }}
-      className="pointer-events-none fixed z-10 rounded-full border-[1px] border-muted p-4 mix-blend-difference"
+      className="pointer-events-none fixed z-10 rounded-full border-[1px] border-border p-4 mix-blend-difference"
     />
   );
 }
