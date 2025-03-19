@@ -21,8 +21,11 @@ function CursorFollower() {
 
     const handleMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
-      const computedStyle = window.getComputedStyle(e.target);
-      setIsPointer(computedStyle.cursor === "pointer");
+      // Ensure e.target is an Element before getting its computed style
+      if (e.target instanceof Element) {
+        const computedStyle = window.getComputedStyle(e.target);
+        setIsPointer(computedStyle.cursor === "pointer");
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -35,11 +38,9 @@ function CursorFollower() {
 
     const handleClick = () => {
       setIsClicked(true);
-
       // Create and play the audio from the public folder
       const audio = new Audio("/sounds/mouse-sound.wav");
       audio.play();
-
       setTimeout(() => setIsClicked(false), 150);
     };
 
@@ -56,7 +57,7 @@ function CursorFollower() {
         left: pos.x - 20,
         top: pos.y - 18,
         scale: isClicked ? 1.2 : 1,
-        opacity: isClicked ? 0.35 : .8,
+        opacity: isClicked ? 0.35 : 0.8,
       }}
       transition={{
         type: "tween",
