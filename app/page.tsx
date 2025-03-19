@@ -36,7 +36,7 @@ export default function Home() {
               />
               <figcaption>
                 <div className="flex min-w-[10.75rem] lg:min-w-[20rem] select-none flex-col items-start gap-1 lg:gap-4 md:items-start">
-                  <h1 className="flex text-[3rem] font-semibold leading-none tracking-[-0.08em] text-[--highlight] md:text-[4.5rem]">
+                  <h1 className="flex text-[3rem] font-semibold leading-none tracking-[-0.08em] text-highlight md:text-[4.5rem]">
                     qu<p className="tracking-[-0.55rem]">i</p>nch
                   </h1>
                   <p className="ml-1 lg:ml-2 tracking-tighter opacity-90 text-[1rem] md:text-[1.40rem]">
@@ -49,7 +49,7 @@ export default function Home() {
             <article id="about-section">
               <p className="text-center xl:text-start text-base max-w-[20rem] sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem]">
                 Hello! My name is{" "}
-                <span className="text-[--highlight]">
+                <span className="text-highlight">
                   Cyril James De Guzman
                 </span>
                 . {"I'm"} a Software Developer with specialization in Web and
@@ -75,7 +75,7 @@ export default function Home() {
           id="projects-section"
           className="flex w-full scroll-mt-40 flex-col items-center gap-5"
         >
-          <p className="self-center text-[2rem] font-bold tracking-[-0.05em] text-[--highlight] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]">
+          <p className="self-center text-[2rem] font-bold tracking-[-0.05em] text-highlight duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]">
             code:projects
           </p>
           <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2">

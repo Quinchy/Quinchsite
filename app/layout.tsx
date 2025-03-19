@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeistMono.className} flex flex-col items-center justify-center text-[--regular]`}
+        className={`${GeistMono.className} flex flex-col items-center justify-center`}
       >
         {children}
         <CursorFollower />

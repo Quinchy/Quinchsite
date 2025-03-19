@@ -13,7 +13,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col h-96 w-80 border-[1px] border-[--border] rounded-3xl gap-5 p-7 hover:bg-[--muted] duration-500 ease-in-out">
+    <div className="flex flex-col h-96 w-80 border-[1px] border-border rounded-3xl gap-5 p-7 hover:bg-muted duration-500 ease-in-out">
       <Image
         src={thumbnail}
         alt={title}
@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className="rounded-xl"
       />
       <div className="flex flex-col gap-2">
-        <p className="text-lg font-bold text-[--highlight]">
+        <p className="text-lg font-bold text-highlight">
           {title}
         </p>
         <p>
