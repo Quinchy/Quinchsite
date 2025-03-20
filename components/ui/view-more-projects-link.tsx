@@ -5,16 +5,20 @@ interface ViewMoreProjectsLinkProps {
   href?: string;
   label?: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const ViewMoreProjectsLink: React.FC<ViewMoreProjectsLinkProps> = ({
   href = "/projects",
   label = "View More Projects",
+  className = "",
+  style,
 }) => {
   return (
     <Link
       href={href}
-      className="min-w-[320px] md:w-full rounded-xl mt-5 text-lg border-[1px] border-border py-5 text-center duration-500 ease-in-out hover:bg-muted"
+      className={`border-border hover:bg-muted mt-5 min-w-[320px] rounded-xl border-[1px] py-5 text-center text-lg duration-500 ease-in-out md:w-full ${className}`}
+      style={style}
     >
       {label}
     </Link>

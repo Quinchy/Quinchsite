@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link
           href="/"
           className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/" ? "text-[var(--highlight)]" : ""
+            pathname === "/" ? "text-highlight" : ""
           }`}
         >
           {"/"}
@@ -33,7 +33,7 @@ const Navbar = () => {
         <Link
           href="/about"
           className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/about" ? "text-[var(--highlight)]" : ""
+            pathname === "/about" ? "text-highlight" : ""
           }`}
         >
           {"/about"}
@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link
           href="/projects"
           className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/projects" ? "text-[var(--highlight)]" : ""
+            pathname === "/projects" ? "text-highlight" : ""
           }`}
         >
           {"/projects"}

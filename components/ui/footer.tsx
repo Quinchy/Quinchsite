@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             {"© 2024 Cyril James De Guzman. All Rights Reserved."}
           </small>
           <small className="text-center lg:text-right text-[0.65rem] min-[520px]:text-[0.75rem] sm:text-[0.85rem]">
-            {"Made using Next.js, with Tailwind CSS."}
+            {"Made with passion."}
           </small>
         </div>
       </div>
