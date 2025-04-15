@@ -1,5 +1,5 @@
 import React from "react";
-import SocialMediaLink from "./social-media-link";
+import SocialMediaLink from "../link/social-media-link";
 import GitHubIcon from "@/public/images/github_icon.svg";
 import LinkedInIcon from "@/public/images/linkedin_icon.svg";
 

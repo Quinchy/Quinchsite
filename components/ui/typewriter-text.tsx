@@ -1,0 +1,45 @@
+import React, { useState, useRef } from "react";
+
+interface TypewriterTextProps {
+  label: string;
+  className?: string;
+  onComplete?: () => void;
+}
+
+const TypewriterText: React.FC<TypewriterTextProps> = ({
+  label,
+  className,
+  onComplete,
+}) => {
+  const [text, setText] = useState("");
+  const currentCharIndex = useRef(0);
+  const hasAnimated = useRef(false);
+
+  if (!hasAnimated.current) {
+    hasAnimated.current = true;
+
+    const animateTyping = () => {
+      const nextChar = label.slice(0, currentCharIndex.current + 1);
+      setText(nextChar);
+      currentCharIndex.current++;
+
+      if (currentCharIndex.current < label.length) {
+        setTimeout(animateTyping, 100);
+      } else {
+        onComplete?.();
+      }
+    };
+
+    animateTyping();
+  }
+
+  return (
+    <p
+      className={`text-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] ${className || ""}`}
+    >
+      {text}
+    </p>
+  );
+};
+
+export default TypewriterText;

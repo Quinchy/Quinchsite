@@ -8,6 +8,16 @@
   --color-highlight: #83ffc0;
   --color-muted: #8abeae20;
   --color-nav: #1b2226;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @layer utilities {
@@ -48,18 +58,8 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-out forwards;
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 2px 2px var(--color-highlight);
+  border-radius: 1.25rem;
 }

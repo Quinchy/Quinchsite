@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function CursorFollower() {
+export default function CursorFollower() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [showCursor, setShowCursor] = useState(false);
@@ -67,5 +67,3 @@ function CursorFollower() {
     />
   );
 }
-
-export default CursorFollower;

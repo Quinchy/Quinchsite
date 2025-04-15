@@ -2,15 +2,15 @@ import Link from "next/link";
 import React from "react";
 
 interface ViewMoreProjectsLinkProps {
-  href?: string;
-  label?: string;
+  href: string;
+  label: string;
   className?: string;
   style?: React.CSSProperties;
 }
 
 const ViewMoreProjectsLink: React.FC<ViewMoreProjectsLinkProps> = ({
   href = "/projects",
-  label = "View More Projects",
+  label,
   className = "",
   style,
 }) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ProfilePic from "@/public/images/me.png";
@@ -8,63 +8,25 @@ import AppointmentSystem from "@/public/images/appointment_system.png";
 import PeerToPeerDeliverySystem from "@/public/images/peer_to_peer_delivery_system.png";
 import HueFitMobile from "@/public/images/huefit_mobile.png";
 import HueFitWeb from "@/public/images/huefit_web.png";
-import Navbar from "@/components/ui/navbar";
-import Footer from "@/components/ui/footer";
-import ScrollToButton from "@/components/ui/move-to-project-button";
+import MainWrapper from "@/components/layout/main-wrapper";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import ScrollToButton from "@/components/button/move-to-project-button";
 import SocialMediaList from "@/components/ui/social-media-list";
+import TypewriterText from "@/components/ui/typewriter-text";
 import ProjectCard from "@/components/ui/project-card";
-import ViewMoreProjectsLink from "@/components/ui/view-more-projects-link";
+import ViewMoreProjectsLink from "@/components/link/view-more-projects-link";
+import useInView from "@/hooks/useInView"; 
 
 export default function Home() {
-  // Typewriter effect for "code:projects" text
-  const fullText = "code:projects";
-  const [displayedText, setDisplayedText] = useState("");
-  const [typewriterDone, setTypewriterDone] = useState(false);
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(fullText.slice(0, currentIndex + 1));
-      currentIndex++;
-      if (currentIndex === fullText.length) {
-        clearInterval(interval);
-        setTypewriterDone(true);
-      }
-    }, 150);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Intersection Observer to trigger project animations when section is in view
-  const projectsRef = useRef(null);
-  const [projectsVisible, setProjectsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setProjectsVisible(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
-
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Projects animate only if typewriter effect is done and section is visible
-  const canAnimateProjects = typewriterDone && projectsVisible;
+  const [typewriterAnimationDone, setTypewriterAnimationDone] = useState(false);
+  const { ref: projectsRef, isInView: hasReachedProjects } =
+    useInView<HTMLDivElement>();
 
   return (
     <>
       <Navbar />
-      <main className="mt-[9rem] mb-[10rem] flex flex-col items-center justify-center gap-64 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48">
+      <MainWrapper>
         {/* 1. Hero Section */}
         <section className="flex items-center gap-5 md:items-start">
           <div className="flex flex-col items-center gap-10 duration-300 ease-in-out lg:items-start">
@@ -102,19 +64,18 @@ export default function Home() {
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
                 Hi! My name is{" "}
                 <span className="text-highlight">Cyril James De Guzman</span>{" "}
-                and I'm a Software Developer specializing in Web and Mobile
-                Development.
+                and I'm a Full-stack Software Developer that specialize in Web
+                and Mobile Development based in the Philippines.
                 <br />
                 <br />
                 I'm a Developer with a passion for creating stunning visuals and
-                using clear logic to solve challenging problems. Whether it's
-                full-stack applications with Next.js, Laravel, React Native
-                Expo, or other technologies, I strive to build software that's
-                both glorious and efficient.
+                solving problems. Whether it's a website, mobile application, or
+                other solutions, I strive to deliver software that's both
+                pleasing and efficient to use.
                 <br />
                 <br />
                 Aside from coding and tech, I enjoy Art, Gaming, Photography,
-                Animation, and anything fun.
+                Animation, and more.
               </p>
             </article>
             <div className="fade-in" style={{ animationDelay: "0.6s" }}>
@@ -129,81 +90,94 @@ export default function Home() {
           ref={projectsRef}
           className="flex w-full scroll-mt-40 flex-col items-center gap-5"
         >
-          <p
-            className="text-highlight self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
-            style={{ minHeight: "3rem" }}
-          >
-            {displayedText}
-          </p>
-          {/* Always render projects container; use inline style to reserve space */}
-          <div
-            className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2"
-            style={!typewriterDone ? { opacity: 0 } : {}}
-          >
-            <Link
-              href="https://github.com/Quinchy/Hue-Fit"
-              target="_blank"
-              passHref
-              className={canAnimateProjects ? "fade-in" : ""}
-              style={{ animationDelay: canAnimateProjects ? "0s" : "0s" }}
-            >
-              <ProjectCard
-                thumbnail={HueFitWeb}
-                title="HueFit Web"
-                description="A Web-based Inventory and Ordering Management System plus Business Website of HueFit built using Next.js."
+          {hasReachedProjects && (
+            <>
+              <TypewriterText
+                label="code:projects"
+                className="text-[2.25rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
+                onComplete={() => setTypewriterAnimationDone(true)}
               />
-            </Link>
-            <Link
-              href="https://github.com/Quinchy/Hue-Fit"
-              target="_blank"
-              passHref
-              className={canAnimateProjects ? "fade-in" : ""}
-              style={{ animationDelay: canAnimateProjects ? "0.2s" : "0s" }}
-            >
-              <ProjectCard
-                thumbnail={HueFitMobile}
-                title="HueFit Mobile"
-                description="A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo."
+              <div
+                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 ${typewriterAnimationDone ? "opacity-100" : "opacity-0"}`}
+              >
+                <Link
+                  href="https://github.com/Quinchy/Hue-Fit"
+                  target="_blank"
+                  passHref
+                  className={
+                    typewriterAnimationDone
+                      ? "animate-[fadeIn_500ms_ease-in-out]"
+                      : ""
+                  }
+                >
+                  <ProjectCard
+                    thumbnail={HueFitWeb}
+                    title="HueFit Web"
+                    description="A Web-based Inventory and Ordering Management System plus Business Website of HueFit built using Next.js."
+                  />
+                </Link>
+                <Link
+                  href="https://github.com/Quinchy/Hue-Fit"
+                  target="_blank"
+                  passHref
+                  className={
+                    typewriterAnimationDone
+                      ? "animate-[fadeIn_700ms_ease-in-out]"
+                      : ""
+                  }
+                >
+                  <ProjectCard
+                    thumbnail={HueFitMobile}
+                    title="HueFit Mobile"
+                    description="A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo."
+                  />
+                </Link>
+                <Link
+                  href="https://github.com/Quinchy/Pasabuy"
+                  target="_blank"
+                  passHref
+                  className={
+                    typewriterAnimationDone
+                      ? "animate-[fadeIn_900ms_ease-in-out]"
+                      : ""
+                  }
+                >
+                  <ProjectCard
+                    thumbnail={PeerToPeerDeliverySystem}
+                    title="PasaBuy"
+                    description="A Peer-to-Peer Mobile Delivery App built using Android Studio."
+                  />
+                </Link>
+                <Link
+                  href="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
+                  target="_blank"
+                  passHref
+                  className={
+                    typewriterAnimationDone
+                      ? "animate-[fadeIn_1100ms_ease-in-out]"
+                      : ""
+                  }
+                >
+                  <ProjectCard
+                    thumbnail={AppointmentSystem}
+                    title="Dental Appointment System"
+                    description="A Web-based Appointment System built using Laravel."
+                  />
+                </Link>
+              </div>
+              <ViewMoreProjectsLink
+                href="/projects"
+                label="View more projects"
+                className={
+                  typewriterAnimationDone
+                    ? "animate-[fadeIn_1200ms_ease-in-out]"
+                    : "opacity-0"
+                }
               />
-            </Link>
-            <Link
-              href="https://github.com/Quinchy/Pasabuy"
-              target="_blank"
-              passHref
-              className={canAnimateProjects ? "fade-in" : ""}
-              style={{ animationDelay: canAnimateProjects ? "0.4s" : "0s" }}
-            >
-              <ProjectCard
-                thumbnail={PeerToPeerDeliverySystem}
-                title="PasaBuy"
-                description="A Peer-to-Peer Mobile Delivery App built using Android Studio."
-              />
-            </Link>
-            <Link
-              href="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
-              target="_blank"
-              passHref
-              className={canAnimateProjects ? "fade-in" : ""}
-              style={{ animationDelay: canAnimateProjects ? "0.6s" : "0s" }}
-            >
-              <ProjectCard
-                thumbnail={AppointmentSystem}
-                title="Dental Appointment System"
-                description="A Web-based Appointment System built using Laravel."
-              />
-            </Link>
-          </div>
-          <ViewMoreProjectsLink
-            href="/projects"
-            className={canAnimateProjects ? "fade-in" : ""}
-            style={
-              !typewriterDone
-                ? { opacity: 0 }
-                : { animationDelay: canAnimateProjects ? "0.8s" : "0s" }
-            }
-          />
+            </>
+          )}
         </section>
-      </main>
+      </MainWrapper>
       <Footer />
     </>
   );
