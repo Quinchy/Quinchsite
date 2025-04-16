@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import ProfilePic from "@/public/images/me.png";
 import AppointmentSystem from "@/public/images/appointment_system.png";
@@ -100,10 +99,7 @@ export default function Home() {
               <div
                 className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 ${typewriterAnimationDone ? "opacity-100" : "opacity-0"}`}
               >
-                <Link
-                  href="https://github.com/Quinchy/Hue-Fit"
-                  target="_blank"
-                  passHref
+                <div
                   className={
                     typewriterAnimationDone
                       ? "animate-[fadeIn_500ms_ease-in-out]"
@@ -114,12 +110,21 @@ export default function Home() {
                     thumbnail={HueFitWeb}
                     title="HueFit Web"
                     description="A Web-based Inventory and Ordering Management System plus Business Website of HueFit built using Next.js."
+                    longDescription="HueFit is a men's outfit recommendation and shopping platform. Its web-based system serves as both the official business website and a comprehensive inventory and order management platform for HueFit's vendors."
+                    technologies={[
+                      "Next.js",
+                      "Supabase",
+                      "Prisma",
+                      "TailwindCSS",
+                      "NextAuth",
+                      "Formik",
+                      "SWR",
+                      "Shadcn",
+                    ]}
+                    link="https://github.com/Quinchy/Hue-Fit"
                   />
-                </Link>
-                <Link
-                  href="https://github.com/Quinchy/Hue-Fit"
-                  target="_blank"
-                  passHref
+                </div>
+                <div
                   className={
                     typewriterAnimationDone
                       ? "animate-[fadeIn_700ms_ease-in-out]"
@@ -130,12 +135,12 @@ export default function Home() {
                     thumbnail={HueFitMobile}
                     title="HueFit Mobile"
                     description="A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo."
+                    longDescription="HueFit is a men's outfit recommendation and shopping platform. It's mobile-based platform is an E-commerce App used by customers to find, buy, generate, and virtual fit men's clothing products"
+                    technologies={["React Native Expo", "NativeBase", "Formik"]}
+                    link="https://github.com/Quinchy/Hue-Fit"
                   />
-                </Link>
-                <Link
-                  href="https://github.com/Quinchy/Pasabuy"
-                  target="_blank"
-                  passHref
+                </div>
+                <div
                   className={
                     typewriterAnimationDone
                       ? "animate-[fadeIn_900ms_ease-in-out]"
@@ -145,13 +150,13 @@ export default function Home() {
                   <ProjectCard
                     thumbnail={PeerToPeerDeliverySystem}
                     title="PasaBuy"
-                    description="A Peer-to-Peer Mobile Delivery App built using Android Studio."
+                    description="A Mobile Community Delivery App built using Android Studio."
+                    longDescription={`PasaBuy is an Android mobile app inspired by the Filipino concept of "PasaBuy." It's a community-driven delivery platform that connects users with individuals—often from abroad or different areas—who can help purchase and bring specific products home.`}
+                    technologies={["Android Studio", "Java", "Firebase"]}
+                    link="https://github.com/Quinchy/Pasabuy"
                   />
-                </Link>
-                <Link
-                  href="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
-                  target="_blank"
-                  passHref
+                </div>
+                <div
                   className={
                     typewriterAnimationDone
                       ? "animate-[fadeIn_1100ms_ease-in-out]"
@@ -162,8 +167,11 @@ export default function Home() {
                     thumbnail={AppointmentSystem}
                     title="Dental Appointment System"
                     description="A Web-based Appointment System built using Laravel."
+                    longDescription="Donna Mae Jorge-Hollman Dental Clinic is web-based appointment scheduling for a local dental clinic. Patients are able to select appointment schedules that are created by the assistant doctor."
+                    technologies={["Laravel", "PHP", "MySQL"]}
+                    link="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
                   />
-                </Link>
+                </div>
               </div>
               <ViewMoreProjectsLink
                 href="/projects"
