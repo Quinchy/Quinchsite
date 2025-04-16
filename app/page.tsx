@@ -120,8 +120,10 @@ export default function Home() {
                       "Formik",
                       "SWR",
                       "Shadcn",
+                      "Vercel",
                     ]}
-                    link="https://github.com/Quinchy/Hue-Fit"
+                    githubLink="https://github.com/Quinchy/Hue-Fit"
+                    websiteLink="https://hue-fit-web.vercel.app/"
                   />
                 </div>
                 <div
@@ -137,7 +139,7 @@ export default function Home() {
                     description="A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo."
                     longDescription="HueFit is a men's outfit recommendation and shopping platform. It's mobile-based platform is an E-commerce App used by customers to find, buy, generate, and virtual fit men's clothing products"
                     technologies={["React Native Expo", "NativeBase", "Formik"]}
-                    link="https://github.com/Quinchy/Hue-Fit"
+                    githubLink="https://github.com/Quinchy/Hue-Fit"
                   />
                 </div>
                 <div
@@ -153,7 +155,7 @@ export default function Home() {
                     description="A Mobile Community Delivery App built using Android Studio."
                     longDescription={`PasaBuy is an Android mobile app inspired by the Filipino concept of "PasaBuy." It's a community-driven delivery platform that connects users with individuals—often from abroad or different areas—who can help purchase and bring specific products home.`}
                     technologies={["Android Studio", "Java", "Firebase"]}
-                    link="https://github.com/Quinchy/Pasabuy"
+                    githubLink="https://github.com/Quinchy/Pasabuy"
                   />
                 </div>
                 <div
@@ -168,8 +170,15 @@ export default function Home() {
                     title="Dental Appointment System"
                     description="A Web-based Appointment System built using Laravel."
                     longDescription="Donna Mae Jorge-Hollman Dental Clinic is web-based appointment scheduling for a local dental clinic. Patients are able to select appointment schedules that are created by the assistant doctor."
-                    technologies={["Laravel", "PHP", "MySQL"]}
-                    link="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
+                    technologies={[
+                      "Laravel",
+                      "PHP",
+                      "Breeze",
+                      "Socialite",
+                      "MySQL",
+                      "Heroku",
+                    ]}
+                    githubLink="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
                   />
                 </div>
               </div>

@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
+import SiteLink from "@/components/link/site-link"
 
 interface ProjectCardProps {
   thumbnail: string | StaticImageData;
@@ -18,7 +18,8 @@ interface ProjectCardProps {
   description: string;
   longDescription: string;
   technologies: string[];
-  link: string;
+  githubLink: string;
+  websiteLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -27,7 +28,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   longDescription,
   technologies,
-  link
+  githubLink,
+  websiteLink
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,27 +56,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="flex h-[70vh] min-w-[40rem] flex-col">
+        <DialogContent className="flex h-[70vh] lg:min-w-[40rem] flex-col">
           <DialogHeader>
             <DialogTitle asChild>
-              <div className="inline-flex items-center">
-                <Link
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-highlight hover group inline-flex items-center gap-1 text-2xl hover:underline"
-                >
-                  {title}
-                  <ArrowUpRight
-                    width={24}
-                    height={24}
-                    className="transition-all duration-300 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </Link>
+              <div className="text-highlight flex flex-col items-start lg:items-center lg:flex-row gap-4 text-2xl">
+                {title}
+                <div className="flex flex-row gap-2">
+                  <SiteLink href={githubLink}>Github</SiteLink>
+                  {websiteLink && <SiteLink href={websiteLink}>Website</SiteLink>}
+                </div>
               </div>
             </DialogTitle>
           </DialogHeader>
-          <div className="flex flex-col gap-4 pr-2 overflow-y-auto">
+          <div className="flex flex-col gap-4 overflow-y-auto pr-2">
             <Image
               src={thumbnail}
               alt={title}
