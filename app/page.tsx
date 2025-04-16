@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import ProfilePic from "@/public/images/me.png";
 import AppointmentSystem from "@/public/images/appointment_system.png";
 import PeerToPeerDeliverySystem from "@/public/images/peer_to_peer_delivery_system.png";
@@ -15,7 +15,16 @@ import SocialMediaList from "@/components/ui/social-media-list";
 import TypewriterText from "@/components/ui/typewriter-text";
 import ProjectCard from "@/components/ui/project-card";
 import ViewMoreProjectsLink from "@/components/link/view-more-projects-link";
+import ProjectData from "@/data/projects.json";
 import useInView from "@/hooks/useInView"; 
+
+// Create a mapping of names to actual imports
+const thumbnails: Record<string, StaticImageData> = {
+  AppointmentSystem,
+  HueFitMobile,
+  HueFitWeb,
+  PeerToPeerDeliverySystem,
+};
 
 export default function Home() {
   const [typewriterAnimationDone, setTypewriterAnimationDone] = useState(false);
@@ -97,91 +106,32 @@ export default function Home() {
                 onComplete={() => setTypewriterAnimationDone(true)}
               />
               <div
-                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 ${typewriterAnimationDone ? "opacity-100" : "opacity-0"}`}
+                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 ${
+                  typewriterAnimationDone ? "opacity-100" : "opacity-0"
+                }`}
               >
-                <div
-                  className={
-                    typewriterAnimationDone
-                      ? "animate-[fadeIn_500ms_ease-in-out]"
-                      : ""
-                  }
-                >
-                  <ProjectCard
-                    thumbnail={HueFitWeb}
-                    title="HueFit Web"
-                    description="A Web-based Inventory and Ordering Management System plus Business Website of HueFit built using Next.js."
-                    longDescription="HueFit is a men's outfit recommendation and shopping platform. Its web-based system serves as both the official business website and a comprehensive inventory and order management platform for HueFit's vendors."
-                    technologies={[
-                      "Next.js",
-                      "Supabase",
-                      "Prisma",
-                      "TailwindCSS",
-                      "NextAuth",
-                      "Formik",
-                      "SWR",
-                      "Shadcn",
-                      "Vercel",
-                    ]}
-                    githubLink="https://github.com/Quinchy/Hue-Fit"
-                    websiteLink="https://hue-fit-web.vercel.app/"
-                  />
-                </div>
-                <div
-                  className={
-                    typewriterAnimationDone
-                      ? "animate-[fadeIn_700ms_ease-in-out]"
-                      : ""
-                  }
-                >
-                  <ProjectCard
-                    thumbnail={HueFitMobile}
-                    title="HueFit Mobile"
-                    description="A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo."
-                    longDescription="HueFit is a men's outfit recommendation and shopping platform. It's mobile-based platform is an E-commerce App used by customers to find, buy, generate, and virtual fit men's clothing products"
-                    technologies={["React Native Expo", "NativeBase", "Formik"]}
-                    githubLink="https://github.com/Quinchy/Hue-Fit"
-                  />
-                </div>
-                <div
-                  className={
-                    typewriterAnimationDone
-                      ? "animate-[fadeIn_900ms_ease-in-out]"
-                      : ""
-                  }
-                >
-                  <ProjectCard
-                    thumbnail={PeerToPeerDeliverySystem}
-                    title="PasaBuy"
-                    description="A Mobile Community Delivery App built using Android Studio."
-                    longDescription={`PasaBuy is an Android mobile app inspired by the Filipino concept of "PasaBuy." It's a community-driven delivery platform that connects users with individuals—often from abroad or different areas—who can help purchase and bring specific products home.`}
-                    technologies={["Android Studio", "Java", "Firebase"]}
-                    githubLink="https://github.com/Quinchy/Pasabuy"
-                  />
-                </div>
-                <div
-                  className={
-                    typewriterAnimationDone
-                      ? "animate-[fadeIn_1100ms_ease-in-out]"
-                      : ""
-                  }
-                >
-                  <ProjectCard
-                    thumbnail={AppointmentSystem}
-                    title="Dental Appointment System"
-                    description="A Web-based Appointment System built using Laravel."
-                    longDescription="Donna Mae Jorge-Hollman Dental Clinic is web-based appointment scheduling for a local dental clinic. Patients are able to select appointment schedules that are created by the assistant doctor."
-                    technologies={[
-                      "Laravel",
-                      "PHP",
-                      "Breeze",
-                      "Socialite",
-                      "MySQL",
-                      "Heroku",
-                    ]}
-                    githubLink="https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
-                  />
-                </div>
+                {ProjectData.slice(0, 4).map((project, index) => (
+                  <div
+                    key={index}
+                    className={
+                      typewriterAnimationDone
+                        ? `animate-[fadeIn_${500 + index * 200}ms_ease-in-out]`
+                        : ""
+                    }
+                  >
+                    <ProjectCard
+                      thumbnail={thumbnails[project.thumbnail]}
+                      title={project.title}
+                      description={project.description}
+                      longDescription={project.longDescription}
+                      technologies={project.technologies}
+                      githubLink={project.githubLink}
+                      websiteLink={project.websiteLink}
+                    />
+                  </div>
+                ))}
               </div>
+
               <ViewMoreProjectsLink
                 href="/projects"
                 label="View more projects"
