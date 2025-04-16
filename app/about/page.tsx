@@ -4,7 +4,7 @@ import Image from "next/image";
 import MainWrapper from "@/components/layout/main-wrapper";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import ProfilePic from "@/public/images/me.png";
+import ProfilePicture from "@/components/ui/profile-picture";
 import SocialMediaList from "@/components/ui/social-media-list";
 
 export default function About() {
@@ -19,16 +19,7 @@ export default function About() {
               className="fade-in flex flex-row items-start gap-4 lg:gap-8 xl:gap-8"
               style={{ animationDelay: "0s" }}
             >
-              <Image
-                src={ProfilePic}
-                alt="Profile Picture"
-                width={250}
-                height={250}
-                placeholder="empty"
-                quality={100}
-                priority
-                className="h-auto w-[125px] rounded-full sm:w-[200px] md:w-[250px]"
-              />
+              <ProfilePicture />
               <figcaption>
                 <div className="flex min-w-[10.75rem] flex-col items-start gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
                   <h1 className="text-highlight flex text-[3rem] leading-none font-semibold tracking-[-0.08em] md:text-[4.5rem]">
