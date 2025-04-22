@@ -10,8 +10,7 @@ import ProjectData from "@/data/projects.json";
 import AppointmentSystem from "@/public/images/appointment_system.png";
 import AniQuinch from "@/public/images/aniquinch_ecommerce.png";
 import BankingSystem from "@/public/images/banking_system.png";
-import HueFitMobile from "@/public/images/huefit_mobile.png";
-import HueFitWeb from "@/public/images/huefit_web.png";
+import HueFit from "@/public/images/huefit_web.png";
 import PeerToPeerDeliverySystem from "@/public/images/peer_to_peer_delivery_system.png";
 import Zentry from "@/public/images/zentry_hris.png"
 import { StaticImageData } from "next/image";
@@ -21,8 +20,7 @@ const thumbnails: Record<string, StaticImageData> = {
   AppointmentSystem,
   AniQuinch,
   BankingSystem,
-  HueFitMobile,
-  HueFitWeb,
+  HueFit,
   PeerToPeerDeliverySystem,
   Zentry
 };

@@ -2,16 +2,16 @@
     {
         "title": "Zentry",
         "description": "An open-source Human Resource Information System to manage employees built using Next.js",
-        "longDescription": "Zentry is an all-in-one platform that brings employee management, team chat, and scheduling together—everything your company needs in one seamless solution.",
+        "longDescription": "Zentry is an all-in-one platform  designed to simplify employee check-ins and check-outs, enhance team communication through real-time chat, and streamline scheduling for teams of any size.",
         "thumbnail": "Zentry",
-        "technologies": ["React Native Expo", "NativeBase", "Formik"],
+        "technologies": ["Next.js", "Supabase", "Prisma", "TailwindCSS", "Shadcn", "Auth.js", "TanStack Query", "Zod", "React Hook Form", "SendGrid", "Jest"],
         "githubLink": "https://github.com/Quinchy/Zentry",
         "websiteLink": "https://zentry-solutions.vercel.app/"
     },
     {
-        "title": "HueFit Web",
-        "description": "A Web-based Inventory and Ordering Management System plus Business Website of HueFit built using Next.js.",
-        "longDescription": "HueFit is a men's outfit recommendation and shopping platform. Its web-based system serves as both the official business website and a comprehensive inventory and order management platform for HueFit's vendors.",
+        "title": "HueFit",
+        "description": "A Men's Apparel Shop with Outfit Recommendation System built using Next.js, FastAPI, and React Native Expo.",
+        "longDescription": "HueFit is a men's apparel shop with outfit recommendation and virtual fitting. Its a web and mobile, where the web-based platform handles inventory and order management for vendor users and mobile-based platform handles the shopping platform with ai-powered outfit recommendation and virtual fitting technology for customers.",
         "thumbnail": "HueFitWeb",
         "technologies": [
             "Next.js",
@@ -21,8 +21,7 @@
             "NextAuth",
             "Formik",
             "SWR",
-            "Shadcn",
-            "Vercel"
+            "Shadcn"
         ],
         "githubLink": "https://github.com/Quinchy/Hue-Fit",
         "websiteLink": "https://hue-fit-web.vercel.app/"
@@ -42,14 +41,6 @@
         "thumbnail": "AppointmentSystem",
         "technologies": ["Laravel", "PHP", "Breeze", "Socialite", "MySQL", "Heroku"],
         "githubLink": "https://github.com/Quinchy/Donna-Mae-Jorge-Hollman-Dental-Clinic-Scheduling-System"
-    },
-    {
-        "title": "HueFit Mobile",
-        "description": "A Men's Apparel E-commerce Mobile Application with Virtual Fitting built using React Native Expo.",
-        "longDescription": "HueFit is a men's outfit recommendation and shopping platform. It's mobile-based platform is an E-commerce App used by customers to find, buy, generate, and virtual fit men's clothing products",
-        "thumbnail": "HueFitMobile",
-        "technologies": ["React Native Expo", "NativeBase", "Formik"],
-        "githubLink": "https://github.com/Quinchy/Hue-Fit"
     },
     {
         "title": "OnlyFunds",
