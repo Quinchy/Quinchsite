@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import AppointmentSystem from "@/public/images/appointment_system.png";
 import PeerToPeerDeliverySystem from "@/public/images/peer_to_peer_delivery_system.png";
@@ -27,7 +26,6 @@ const thumbnails: Record<string, StaticImageData> = {
 };
 
 export default function Home() {
-  const [typewriterAnimationDone, setTypewriterAnimationDone] = useState(false);
   const { ref: projectsRef, isInView: hasReachedProjects } =
     useInView<HTMLDivElement>();
 
@@ -39,12 +37,12 @@ export default function Home() {
         <section className="flex items-center gap-5 md:items-start">
           <div className="flex flex-col items-center gap-10 duration-300 ease-in-out lg:items-start">
             <figure
-              className="fade-in flex flex-row items-start gap-4 lg:gap-8 xl:gap-8"
+              className="fade-in flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"
               style={{ animationDelay: "0s" }}
             >
               <ProfilePicture />
               <figcaption>
-                <div className="flex min-w-[10.75rem] flex-col items-start gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
+                <div className="flex min-w-[10.75rem] flex-col items-center gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
                   <h1 className="text-highlight flex text-[3rem] leading-none font-semibold tracking-[-0.08em] md:text-[4.5rem]">
                     qu<p className="tracking-[-0.55rem]">i</p>nch
                   </h1>
@@ -93,23 +91,13 @@ export default function Home() {
             <>
               <TypewriterText
                 label="code:projects"
-                className="text-[2.25rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
-                onComplete={() => setTypewriterAnimationDone(true)}
+                className="text-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] lg:text-[4.5rem]text-[2.25rem]"
               />
               <div
-                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 ${
-                  typewriterAnimationDone ? "opacity-100" : "opacity-0"
-                }`}
+                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2`}
               >
                 {ProjectData.slice(0, 4).map((project, index) => (
-                  <div
-                    key={index}
-                    className={
-                      typewriterAnimationDone
-                        ? `animate-[fadeIn_${500 + index * 200}ms_ease-in-out]`
-                        : ""
-                    }
-                  >
+                  <div key={index}>
                     <ProjectCard
                       thumbnail={thumbnails[project.thumbnail]}
                       title={project.title}
@@ -126,11 +114,6 @@ export default function Home() {
               <ViewMoreProjectsLink
                 href="/projects"
                 label="View more projects"
-                className={
-                  typewriterAnimationDone
-                    ? "animate-[fadeIn_1200ms_ease-in-out]"
-                    : "opacity-0"
-                }
               />
             </>
           )}

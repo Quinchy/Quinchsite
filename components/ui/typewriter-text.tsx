@@ -35,7 +35,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
 
   return (
     <p
-      className={`text-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] ${className || ""}`}
+      className={`${className || ""}`}
     >
       {text}
     </p>
