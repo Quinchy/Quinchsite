@@ -12,7 +12,7 @@
         "title": "HueFit",
         "description": "A Men's Apparel Shop with Outfit Recommendation System built using Next.js, FastAPI, and React Native Expo.",
         "longDescription": "HueFit is a men's apparel shop with outfit recommendation and virtual fitting. Its a web and mobile, where the web-based platform handles inventory and order management for vendor users and mobile-based platform handles the shopping platform with ai-powered outfit recommendation and virtual fitting technology for customers.",
-        "thumbnail": "HueFitWeb",
+        "thumbnail": "HueFit",
         "technologies": [
             "Next.js",
             "Supabase",

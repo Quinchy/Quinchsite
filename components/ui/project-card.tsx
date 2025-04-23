@@ -56,19 +56,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="flex h-[70vh] lg:min-w-[40rem] flex-col">
+        <DialogContent className="flex h-[70vh] flex-col lg:min-w-[40rem]">
           <DialogHeader>
             <DialogTitle asChild>
-              <div className="text-highlight flex flex-col items-start lg:items-center lg:flex-row gap-4 text-2xl">
+              <div className="text-highlight flex flex-col items-start gap-4 text-2xl lg:flex-row lg:items-center">
                 {title}
                 <div className="flex flex-row gap-2">
                   <SiteLink href={githubLink}>Github</SiteLink>
-                  {websiteLink && <SiteLink href={websiteLink}>Website</SiteLink>}
+                  {websiteLink && (
+                    <SiteLink href={websiteLink}>Website</SiteLink>
+                  )}
                 </div>
               </div>
             </DialogTitle>
           </DialogHeader>
-          <div className="flex flex-col gap-4 overflow-y-auto pr-2">
+          <div data-lenis-prevent className="flex flex-col gap-4 overflow-y-auto pr-2">
             <Image
               src={thumbnail}
               alt={title}
