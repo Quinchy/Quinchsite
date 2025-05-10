@@ -18,7 +18,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   return (
     <Link href={href} target="_blank" passHref>
       <div
-        className={`cursor-pointer rounded-xl p-3 hover:bg-muted hover:brightness-125 ease-in-out duration-500 ${className}`}
+        className={`cursor-pointer rounded-xl p-3 group hover:bg-muted hover:brightness-125 scale-75 ease-in-out duration-500 ${className}`}
       >
         <Image
           src={iconSrc}
@@ -26,6 +26,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
           placeholder="empty"
           quality={100}
           priority
+          className="group-hover:scale-110 group-hover:mix-blend-color-dodge transition-all duration-300 ease-in-out"
         />
       </div>
     </Link>

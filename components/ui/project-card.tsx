@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <>
       <div
         onClick={() => setIsOpen(true)}
-        className="border-border hover:bg-muted flex h-96 w-80 cursor-pointer flex-col gap-5 rounded-3xl border-[1px] p-7 duration-500 ease-in-out"
+        className="border-border bg-background hover:border-highlight hover:bg-muted flex h-96 w-80 cursor-pointer flex-col gap-5 rounded-3xl border-[1px] p-7 duration-500 ease-in-out"
       >
         <Image
           src={thumbnail}

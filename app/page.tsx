@@ -43,7 +43,7 @@ export default function Home() {
               <ProfilePicture />
               <figcaption>
                 <div className="flex min-w-[10.75rem] flex-col items-center gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
-                  <h1 className="text-highlight flex text-[3rem] leading-none font-semibold tracking-[-0.08em] md:text-[4.5rem]">
+                  <h1 className="text-highlight text-shadow-highlight flex text-[3rem] leading-none font-semibold tracking-[-0.08em] text-shadow-lg/25 md:text-[4.5rem]">
                     qu<p className="tracking-[-0.55rem]">i</p>nch
                   </h1>
                   <p className="ml-1 text-[1rem] tracking-tighter opacity-90 md:text-[1.40rem] lg:ml-2">
@@ -91,7 +91,7 @@ export default function Home() {
             <>
               <TypewriterText
                 label="code:projects"
-                className="text-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] lg:text-[4.5rem]text-[2.25rem]"
+                className="text-highlight text-shadow-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out text-shadow-lg/25 sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
               />
               <div
                 className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2`}

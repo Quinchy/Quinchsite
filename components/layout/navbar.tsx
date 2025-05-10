@@ -19,29 +19,35 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-1/2 z-10 -translate-x-1/2 rounded-2xl py-2 transition-all duration-500 ease-in-out select-none ${scrolled ? "mt-2 w-[20rem] sm:w-[28rem] md:w-[35rem] lg:w-[40rem] bg-nav border-b-[1px] border-b-muted shadow-shadow shadow-lg" : "mt-0 w-[25rem] sm:w-[32rem] md:w-[38rem] lg:w-[45rem] border-b-0 border-b-background bg-background shadow-none"} `}
+      className={`fixed top-0 left-1/2 z-10 -translate-x-1/2 rounded-2xl py-2 transition-all duration-500 ease-in-out select-none ${scrolled ? "bg-nav border-b-muted shadow-shadow mt-2 w-[20rem] border-b-[1px] shadow-lg sm:w-[28rem] md:w-[35rem] lg:w-[40rem]" : "mt-0 w-[25rem] border-b-0 border-b-transparent bg-transparent shadow-none sm:w-[32rem] md:w-[38rem] lg:w-[45rem]"} `}
     >
       <nav className="flex items-center justify-center gap-4 text-lg font-semibold tracking-tighter sm:gap-12 md:gap-16 lg:gap-24 xl:px-[15rem]">
         <Link
           href="/"
-          className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/" ? "text-highlight" : ""
+          className={`hover:bg-muted rounded-3xl px-4 py-3 duration-300 ease-in-out md:px-6 ${
+            pathname === "/"
+              ? "text-highlight text-shadow-highlight text-shadow-lg/35"
+              : ""
           }`}
         >
           {"/"}
         </Link>
         <Link
           href="/about"
-          className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/about" ? "text-highlight" : ""
+          className={`hover:bg-muted rounded-3xl px-4 py-3 duration-300 ease-in-out md:px-6 ${
+            pathname === "/about"
+              ? "text-highlight text-shadow-highlight text-shadow-lg/15"
+              : ""
           }`}
         >
           {"/about"}
         </Link>
         <Link
           href="/projects"
-          className={`rounded-3xl px-4 py-3 duration-300 ease-in-out hover:bg-muted md:px-6 ${
-            pathname === "/projects" ? "text-highlight" : ""
+          className={`hover:bg-muted rounded-3xl px-4 py-3 duration-300 ease-in-out md:px-6 ${
+            pathname === "/projects"
+              ? "text-highlight text-shadow-highlight text-shadow-lg/15"
+              : ""
           }`}
         >
           {"/projects"}
