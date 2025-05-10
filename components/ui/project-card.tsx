@@ -44,9 +44,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           alt={title}
           width={300}
           height={300}
-          placeholder="empty"
+          placeholder="blur"
+          priority={true}
           quality={100}
-          loading="lazy"
           className="rounded-xl"
         />
         <div className="flex flex-col gap-2">
@@ -75,14 +75,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 width={600}
                 height={400}
                 quality={100}
-                className="border-border h-auto w-full border-[1px] rounded-xl"
+                placeholder="blur"
+                priority={true}
+                className="border-border h-auto w-full rounded-xl border-[1px]"
               />
             </div>
             <div className="flex flex-row gap-2 px-5">
               <SiteLink href={githubLink}>Github</SiteLink>
               {websiteLink && <SiteLink href={websiteLink}>Website</SiteLink>}
             </div>
-            <div className="flex flex-col gap-4 px-5 mb-10">
+            <div className="mb-10 flex flex-col gap-4 px-5">
               <p className="text-base">{longDescription}</p>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (

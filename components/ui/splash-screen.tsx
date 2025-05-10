@@ -74,7 +74,7 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
           alt="Animated Quinch Logo"
           width={200}
           height={200}
-          priority
+          priority={true}
         />
       </motion.div>
     </>

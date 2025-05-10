@@ -12,11 +12,11 @@ export default function ProfilePicture() {
 
   return (
     <div
-      className="relative h-[250px] w-[250px] cursor-pointer perspective"
+      className="perspective relative h-[250px] w-[250px] cursor-pointer"
       onClick={handleClick}
     >
       <div
-        className={`relative h-full w-full transition-transform duration-700 transform-style-preserve-3d ${
+        className={`transform-style-preserve-3d relative h-full w-full transition-transform duration-700 ${
           flipped ? "rotate-y-180" : ""
         }`}
       >
@@ -26,10 +26,10 @@ export default function ProfilePicture() {
             src={FrontImage}
             alt="Profile Picture Front"
             fill
-            placeholder="empty"
             quality={100}
-            className="object-contain rounded-full"
-            priority
+            className="rounded-full object-contain"
+            placeholder="blur"
+            priority={true}
           />
         </div>
 
@@ -39,10 +39,9 @@ export default function ProfilePicture() {
             src={BackImage}
             alt="Profile Picture Back"
             fill
-            placeholder="empty"
-            quality={100}
-            className="object-contain rounded-full"
-            priority
+            placeholder="blur"
+            priority={true}
+            className="rounded-full object-contain"
           />
         </div>
       </div>
