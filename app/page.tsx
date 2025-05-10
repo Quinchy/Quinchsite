@@ -16,6 +16,8 @@ import ViewMoreProjectsLink from "@/components/link/view-more-projects-link";
 import ProjectData from "@/data/projects.json";
 import ProfilePicture from "@/components/ui/profile-picture";
 import useInView from "@/hooks/useInView"; 
+import SplashScreen from "@/components/ui/splash-screen";
+import { useEffect, useState } from "react";
 
 // Create a mapping of names to actual imports
 const thumbnails: Record<string, StaticImageData> = {
@@ -28,17 +30,17 @@ const thumbnails: Record<string, StaticImageData> = {
 export default function Home() {
   const { ref: projectsRef, isInView: hasReachedProjects } =
     useInView<HTMLDivElement>();
-
+  const [showSplash, setShowSplash] = useState(true);
+  
   return (
     <>
+      {showSplash && <SplashScreen onSlideEnd={() => setShowSplash(false)} />}
       <Navbar />
       <MainWrapper>
         {/* 1. Hero Section */}
         <section className="flex items-center gap-5 md:items-start">
           <div className="flex flex-col items-center gap-10 lg:items-start">
-            <figure
-              className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"
-            >
+            <figure className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8">
               <ProfilePicture />
               <figcaption>
                 <div className="flex min-w-[10.75rem] flex-col items-center gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
@@ -52,10 +54,7 @@ export default function Home() {
                 </div>
               </figcaption>
             </figure>
-            <article
-              id="about-section"
-              style={{ animationDelay: "0.3s" }}
-            >
+            <article id="about-section" style={{ animationDelay: "0.3s" }}>
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
                 Hi! My name is{" "}
                 <span className="text-highlight">Cyril James De Guzman</span>{" "}
