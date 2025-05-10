@@ -1,10 +1,13 @@
 "use client";
 
 import { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
+
 import AppointmentSystem from "@/public/images/appointment_system.png";
 import PeerToPeerDeliverySystem from "@/public/images/peer_to_peer_delivery_system.png";
 import Zentry from "@/public/images/zentry_hris.png";
 import HueFit from "@/public/images/huefit_web.png";
+
 import MainWrapper from "@/components/layout/main-wrapper";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -13,6 +16,7 @@ import SocialMediaList from "@/components/ui/social-media-list";
 import TypewriterText from "@/components/ui/typewriter-text";
 import ProjectCard from "@/components/ui/project-card";
 import ViewMoreProjectsLink from "@/components/link/view-more-projects-link";
+
 import ProjectData from "@/data/projects.json";
 import ProfilePicture from "@/components/ui/profile-picture";
 import useInView from "@/hooks/useInView";
@@ -25,6 +29,18 @@ const thumbnails: Record<string, StaticImageData> = {
   PeerToPeerDeliverySystem,
 };
 
+// Fade-in variants for Hero section
+const heroContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.2 } },
+  transition: { duration: 2 },
+};
+const heroItem = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+  transition: { duration: 2 },
+};
+
 export default function Home() {
   const { ref: projectsRef, isInView: hasReachedProjects } =
     useInView<HTMLDivElement>();
@@ -35,9 +51,17 @@ export default function Home() {
 
       <MainWrapper>
         {/* 1. Hero Section */}
-        <section className="flex items-center gap-5 md:items-start">
+        <motion.section
+          className="flex items-center gap-5 md:items-start"
+          initial="hidden"
+          animate="visible"
+          variants={heroContainer}
+        >
           <div className="flex flex-col items-center gap-10 lg:items-start">
-            <figure className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8">
+            <motion.figure
+              className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"
+              variants={heroItem}
+            >
               <ProfilePicture />
               <figcaption>
                 <div className="flex min-w-[10.75rem] flex-col items-center gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
@@ -50,9 +74,9 @@ export default function Home() {
                   <SocialMediaList />
                 </div>
               </figcaption>
-            </figure>
+            </motion.figure>
 
-            <article>
+            <motion.article variants={heroItem}>
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
                 Hi! My name is{" "}
                 <span className="text-highlight">Cyril James De Guzman</span>{" "}
@@ -69,15 +93,15 @@ export default function Home() {
                 Aside from coding and tech, I enjoy Art, Gaming, Photography,
                 Animation, and more.
               </p>
-            </article>
+            </motion.article>
 
-            <div>
+            <motion.div variants={heroItem}>
               <ScrollToButton />
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
-        {/* 2. Projects Section */}
+        {/* 2. Projects Section (unchanged) */}
         <section
           id="projects-section"
           ref={projectsRef}

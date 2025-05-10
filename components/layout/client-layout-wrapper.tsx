@@ -10,29 +10,30 @@ export default function ClientLayoutWrapper({
   children: ReactNode;
 }) {
   const pathname = usePathname();
-  const [showSplash, setShowSplash] = useState(false);
+  // start “showing” the splash by default
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     if (pathname !== "/") return;
 
-    // Look at the Navigation Timing entry
+    // detect “back/forward” navigations
     const [navEntry] = performance.getEntriesByType(
       "navigation",
     ) as PerformanceNavigationTiming[];
 
-    // If user came here via back/forward (i.e. client-side routing), skip splash
     if (navEntry?.type === "back_forward") {
-      return;
+      // skip splash on client back/forward
+      setShowSplash(false);
+    } else {
+      // on initial load or full reload, keep splash (already true)
     }
-
-    // Otherwise (initial navigate OR reload), show it
-    setShowSplash(true);
   }, [pathname]);
 
   if (showSplash) {
     return (
       <SplashScreen
         onSlideEnd={() => {
+          // once animation ends, reveal the page
           setShowSplash(false);
         }}
       />
