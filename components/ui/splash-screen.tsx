@@ -12,7 +12,7 @@ interface SplashScreenProps {
 }
 
 export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
-  const gifDuration = 4000; // your GIF length in ms
+  const gifDuration = 3500; // your GIF length in ms
   const slideDuration = 700; // slide+curve duration in ms
   const highlightDelayOffset = 0.05; // seconds delay for highlight layer
 
@@ -36,7 +36,6 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
         initial={{ y: 0, borderRadius: "0px" }}
         animate={{
           y: "-100%",
-          borderRadius: "0px 0px 1000px 1000px",
         }}
         transition={{
           delay: gifDuration / 1000 + highlightDelayOffset,
@@ -61,7 +60,6 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
         initial={{ y: 0, borderRadius: "0px" }}
         animate={{
           y: "-100%",
-          borderRadius: "0px 0px 1000px 1000px",
         }}
         transition={{
           delay: gifDuration / 1000,

@@ -29,11 +29,7 @@ export default function About() {
                 </div>
               </figcaption>
             </figure>
-            <article
-              id="about-section"
-              className="fade-in"
-              style={{ animationDelay: "0.3s" }}
-            >
+            <article>
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
                 Hello! I'm{" "}
                 <span className="text-highlight">Cyril James De Guzman</span>{" "}

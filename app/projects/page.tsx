@@ -30,7 +30,7 @@ export default function Projects() {
     <>
       <Navbar />
       <MainWrapper>
-        <div className="grid grid-cols-1 justify-items-center gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 justify-items-center gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {ProjectData.map((project, index) => (
             <ProjectCard
               key={index}

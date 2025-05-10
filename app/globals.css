@@ -57,6 +57,17 @@
     }
   }
 
+  @keyframes fade-in {
+    from { 
+      opacity: 0;  
+      transform: translateY(2rem);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
   @keyframes slide-out {
     from {
       opacity: 1;
@@ -65,6 +76,17 @@
     to {
       opacity: 0;
       transform: translateY(2rem) scale(0.25);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(2rem);
     }
   }
 }
@@ -116,6 +138,14 @@
   .slide-out {
     animation: slide-out 250ms cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  .fade-in {
+    animation: fade-in 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-out {
+    animation: fade-out 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
 @layer base {
@@ -159,4 +189,8 @@
 
 .TooltipContent[data-state="closed"] {
 	animation-name: slide-out;
+}
+
+.DialogContent[data-state="closed"] {
+	animation-name: fade-out;
 }

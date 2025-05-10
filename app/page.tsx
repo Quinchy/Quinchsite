@@ -15,11 +15,9 @@ import ProjectCard from "@/components/ui/project-card";
 import ViewMoreProjectsLink from "@/components/link/view-more-projects-link";
 import ProjectData from "@/data/projects.json";
 import ProfilePicture from "@/components/ui/profile-picture";
-import useInView from "@/hooks/useInView"; 
-import SplashScreen from "@/components/ui/splash-screen";
-import { useEffect, useState } from "react";
+import useInView from "@/hooks/useInView";
 
-// Create a mapping of names to actual imports
+// Map thumbnail keys to imports
 const thumbnails: Record<string, StaticImageData> = {
   AppointmentSystem,
   Zentry,
@@ -30,12 +28,11 @@ const thumbnails: Record<string, StaticImageData> = {
 export default function Home() {
   const { ref: projectsRef, isInView: hasReachedProjects } =
     useInView<HTMLDivElement>();
-  const [showSplash, setShowSplash] = useState(true);
-  
+
   return (
     <>
-      {showSplash && <SplashScreen onSlideEnd={() => setShowSplash(false)} />}
       <Navbar />
+
       <MainWrapper>
         {/* 1. Hero Section */}
         <section className="flex items-center gap-5 md:items-start">
@@ -54,11 +51,12 @@ export default function Home() {
                 </div>
               </figcaption>
             </figure>
-            <article id="about-section" style={{ animationDelay: "0.3s" }}>
+
+            <article>
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
                 Hi! My name is{" "}
                 <span className="text-highlight">Cyril James De Guzman</span>{" "}
-                and I'm a Full-stack Software Developer that specialize in Web
+                and I'm a Full-stack Software Developer that specializes in Web
                 and Mobile Development based in the Philippines.
                 <br />
                 <br />
@@ -72,6 +70,7 @@ export default function Home() {
                 Animation, and more.
               </p>
             </article>
+
             <div>
               <ScrollToButton />
             </div>
@@ -90,21 +89,19 @@ export default function Home() {
                 label="code:projects"
                 className="text-highlight text-shadow-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out text-shadow-lg/25 sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
               />
-              <div
-                className={`grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2`}
-              >
+
+              <div className="grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2">
                 {ProjectData.slice(0, 4).map((project, index) => (
-                  <div key={index}>
-                    <ProjectCard
-                      thumbnail={thumbnails[project.thumbnail]}
-                      title={project.title}
-                      description={project.description}
-                      longDescription={project.longDescription}
-                      technologies={project.technologies}
-                      githubLink={project.githubLink}
-                      websiteLink={project.websiteLink}
-                    />
-                  </div>
+                  <ProjectCard
+                    key={index}
+                    thumbnail={thumbnails[project.thumbnail]}
+                    title={project.title}
+                    description={project.description}
+                    longDescription={project.longDescription}
+                    technologies={project.technologies}
+                    githubLink={project.githubLink}
+                    websiteLink={project.websiteLink}
+                  />
                 ))}
               </div>
 
@@ -116,6 +113,7 @@ export default function Home() {
           )}
         </section>
       </MainWrapper>
+
       <Footer />
     </>
   );

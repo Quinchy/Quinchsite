@@ -59,33 +59,41 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <DialogContent className="flex h-[70vh] flex-col lg:min-w-[40rem]">
           <DialogHeader>
             <DialogTitle asChild>
-              <div className="text-highlight flex flex-col items-start gap-4 text-2xl lg:flex-row lg:items-center">
+              <div className="text-highlight flex flex-col items-start gap-4 text-base lg:flex-row lg:items-center">
                 {title}
-                <div className="flex flex-row gap-2">
-                  <SiteLink href={githubLink}>Github</SiteLink>
-                  {websiteLink && (
-                    <SiteLink href={websiteLink}>Website</SiteLink>
-                  )}
-                </div>
               </div>
             </DialogTitle>
           </DialogHeader>
-          <div data-lenis-prevent className="flex flex-col gap-4 overflow-y-auto pr-2">
-            <Image
-              src={thumbnail}
-              alt={title}
-              width={600}
-              height={400}
-              quality={100}
-              className="h-auto w-full rounded-xl"
-            />
-            <p className="text-base">{longDescription}</p>
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, index) => (
-                <Badge key={index} className="bg-muted text-foreground">
-                  {tech}
-                </Badge>
-              ))}
+          <div
+            data-lenis-prevent
+            className="flex flex-col gap-4 overflow-y-auto"
+          >
+            <div className="px-5 pt-5">
+              <Image
+                src={thumbnail}
+                alt={title}
+                width={600}
+                height={400}
+                quality={100}
+                className="border-border h-auto w-full border-[1px] rounded-xl"
+              />
+            </div>
+            <div className="flex flex-row gap-2 px-5">
+              <SiteLink href={githubLink}>Github</SiteLink>
+              {websiteLink && <SiteLink href={websiteLink}>Website</SiteLink>}
+            </div>
+            <div className="flex flex-col gap-4 px-5 mb-10">
+              <p className="text-base">{longDescription}</p>
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech, index) => (
+                  <Badge
+                    key={index}
+                    className="bg-muted text-foreground hover:bg-highlight hover:text-background transition-all duration-500 ease-in-out"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
         </DialogContent>

@@ -2,19 +2,21 @@
     {
         "title": "Zentry",
         "description": "An open-source Human Resource Information System to manage employees built using Next.js",
-        "longDescription": "Zentry is an all-in-one platform  designed to simplify employee check-ins and check-outs, enhance team communication through real-time chat, and streamline scheduling for teams of any size.",
+        "longDescription": "Zentry is a platform  designed to simplify employee check-ins and check-outs, enhance team communication through real-time chat, and streamline scheduling for teams of any size.",
         "thumbnail": "Zentry",
-        "technologies": ["Next.js", "Supabase", "Prisma", "TailwindCSS", "Shadcn", "Auth.js", "TanStack Query", "Zod", "React Hook Form", "SendGrid", "Jest"],
+        "technologies": ["Next.js", "Supabase", "Prisma", "TailwindCSS", "Shadcn", "Zod",  "Jest", "TanStack Query", "React Hook Form"],
         "githubLink": "https://github.com/Quinchy/Zentry",
         "websiteLink": "https://zentry-solutions.vercel.app/"
     },
     {
         "title": "HueFit",
         "description": "A Men's Apparel Shop with Outfit Recommendation System built using Next.js, FastAPI, and React Native Expo.",
-        "longDescription": "HueFit is a men's apparel shop with outfit recommendation and virtual fitting. Its a web and mobile, where the web-based platform handles inventory and order management for vendor users and mobile-based platform handles the shopping platform with ai-powered outfit recommendation and virtual fitting technology for customers.",
+        "longDescription": "HueFit consist of web and mobile platform, where the web-based platform handles inventory and order management and mobile-based platform handles the e-commerce platform with ai-powered outfit recommendation and virtual fitting technology.",
         "thumbnail": "HueFit",
         "technologies": [
             "Next.js",
+            "React Native Expo",
+            "FastAPI",
             "Supabase",
             "Prisma",
             "TailwindCSS",
@@ -35,7 +37,7 @@
         "githubLink": "https://github.com/Quinchy/Pasabuy"
     },
     {
-        "title": "Dental Appointment System",
+        "title": "SmileCare",
         "description": "A Web-based Appointment System built using Laravel.",
         "longDescription": "Donna Mae Jorge-Hollman Dental Clinic is web-based appointment scheduling for a local dental clinic. Patients are able to select appointment schedules that are created by the assistant doctor.",
         "thumbnail": "AppointmentSystem",

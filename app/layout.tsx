@@ -3,6 +3,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import CursorFollower from "@/components/ui/cursor-follower";
 import LenisScrollProvider from "@/providers/lenis-provider";
+import ClientLayoutWrapper from "@/components/layout/client-layout-wrapper";
 
 export const metadata: Metadata = {
   title: "Quinch",
@@ -20,7 +21,7 @@ export default function RootLayout({
         className={`${GeistMono.className} flex flex-col items-center justify-center`}
       >
         <LenisScrollProvider>
-          {children}
+          <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
           <CursorFollower />
         </LenisScrollProvider>
       </body>
