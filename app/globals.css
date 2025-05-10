@@ -99,7 +99,7 @@
     position: fixed;
     inset: 0;
     background: url("/images/noise2.png") repeat;
-    opacity: 0.5;               /* tweak for subtlety */
+    opacity: 0.25;               /* tweak for subtlety */
     mix-blend-mode: overlay;     /* blends noise with bg */
     animation: grain 0.25s steps(3) infinite;
     z-index: -9999;
