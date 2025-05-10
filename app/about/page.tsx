@@ -14,11 +14,8 @@ export default function About() {
       <MainWrapper>
         {/* 1. Hero Section */}
         <section className="flex items-center gap-5 md:items-start">
-          <div className="flex flex-col items-center gap-10 duration-300 ease-in-out lg:items-start">
-            <figure
-              className="fade-in flex flex-row items-start gap-4 lg:gap-8 xl:gap-8"
-              style={{ animationDelay: "0s" }}
-            >
+          <div className="flex flex-col items-center gap-10 lg:items-start">
+            <figure className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8">
               <ProfilePicture />
               <figcaption>
                 <div className="flex min-w-[10.75rem] flex-col items-start gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">

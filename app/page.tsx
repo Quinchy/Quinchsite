@@ -35,10 +35,9 @@ export default function Home() {
       <MainWrapper>
         {/* 1. Hero Section */}
         <section className="flex items-center gap-5 md:items-start">
-          <div className="flex flex-col items-center gap-10 duration-300 ease-in-out lg:items-start">
+          <div className="flex flex-col items-center gap-10 lg:items-start">
             <figure
-              className="fade-in flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"
-              style={{ animationDelay: "0s" }}
+              className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"
             >
               <ProfilePicture />
               <figcaption>
@@ -55,7 +54,6 @@ export default function Home() {
             </figure>
             <article
               id="about-section"
-              className="fade-in"
               style={{ animationDelay: "0.3s" }}
             >
               <p className="max-w-[20rem] text-center text-base sm:max-w-[25rem] md:max-w-[32rem] lg:max-w-[40rem] xl:text-start">
@@ -75,7 +73,7 @@ export default function Home() {
                 Animation, and more.
               </p>
             </article>
-            <div className="fade-in" style={{ animationDelay: "0.6s" }}>
+            <div>
               <ScrollToButton />
             </div>
           </div>
