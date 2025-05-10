@@ -1,7 +1,7 @@
 // components/ui/splash-screen.tsx
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import animatedQuinchLogo from "@/public/images/animated-quinch-logo.gif";
@@ -15,7 +15,7 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
   const gifDuration = 3500; // your GIF length in ms
   const slideDuration = 700; // slide+curve duration in ms
   const highlightDelayOffset = 0.05; // seconds delay for highlight layer
-
+  const [imgKey, setImgKey] = useState(() => Date.now());
   // once GIF + slide have run, tell parent to unmount
   useEffect(() => {
     const timer = setTimeout(onSlideEnd, gifDuration + slideDuration);
@@ -69,6 +69,7 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
         }}
       >
         <Image
+          key={imgKey}
           src={animatedQuinchLogo}
           alt="Animated Quinch Logo"
           width={200}

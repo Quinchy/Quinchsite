@@ -32,6 +32,7 @@ export default function ClientLayoutWrapper({
   if (showSplash) {
     return (
       <SplashScreen
+        key={Date.now()}
         onSlideEnd={() => {
           // once animation ends, reveal the page
           setShowSplash(false);
