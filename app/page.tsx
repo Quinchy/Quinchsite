@@ -31,14 +31,12 @@ const thumbnails: Record<string, StaticImageData> = {
 
 // Fade-in variants for Hero section
 const heroContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
-  transition: { duration: 2 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.35 } },
 };
 const heroItem = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-  transition: { duration: 2 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
 export default function Home() {
@@ -51,12 +49,14 @@ export default function Home() {
 
       <MainWrapper>
         {/* 1. Hero Section */}
+        
         <motion.section
           className="flex items-center gap-5 md:items-start"
           initial="hidden"
           animate="visible"
           variants={heroContainer}
         >
+          <></>
           <div className="flex flex-col items-center gap-10 lg:items-start">
             <motion.figure
               className="flex flex-col items-center gap-4 md:flex-row md:items-start lg:gap-8 xl:gap-8"

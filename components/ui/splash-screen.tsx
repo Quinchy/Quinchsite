@@ -75,6 +75,7 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
           width={200}
           height={200}
           priority={true}
+          unoptimized={true}
         />
       </motion.div>
     </>
