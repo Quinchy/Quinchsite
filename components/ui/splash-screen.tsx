@@ -43,6 +43,7 @@ export default function SplashScreen({ onSlideEnd }: SplashScreenProps) {
           ease: [0.22, 1, 0.36, 1],
           bounce: 0.75,
         }}
+        exit={{ opacity: 0, y: -40, pointerEvents: "none" }}
       />
 
       {/* Main splash layer */}

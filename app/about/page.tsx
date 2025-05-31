@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import ProfilePicture from "@/components/ui/profile-picture";
 import SocialMediaList from "@/components/ui/social-media-list";
+import TypewriterText from "@/components/ui/typewriter-text";
 
 export default function About() {
   return (
@@ -51,6 +52,15 @@ export default function About() {
                 and watching anime, shows or movies.
               </p>
             </article>
+          </div>
+        </section>
+        {/* 2. History Section */}
+        <section>
+          <TypewriterText
+            label="code:journey"
+          />
+          <div>
+            
           </div>
         </section>
       </MainWrapper>

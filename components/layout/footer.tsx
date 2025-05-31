@@ -3,7 +3,7 @@ import SocialMediaList from "@/components/ui/social-media-list";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full" role="contentinfo">
+    <footer className="w-full max-w-4xl mx-auto" role="contentinfo">
       <div className="mb-10 sm flex flex-col lg:flex-row items-center justify-center gap-1 border-t border-muted pt-10 sm:gap-[2rem] lg:gap-[16rem]">
         <SocialMediaList />
         <div className="flex flex-col lg:items-end">

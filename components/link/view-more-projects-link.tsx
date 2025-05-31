@@ -17,7 +17,10 @@ const ViewMoreProjectsLink: React.FC<ViewMoreProjectsLinkProps> = ({
   return (
     <Link
       href={href}
-      className={`border-border hover:bg-muted hover:text-highlight hover:border-highlight mt-5 min-w-[320px] rounded-xl border-[1px] py-5 text-center text-lg duration-500 ease-in-out md:w-full ${className}`}
+      onClick={(e) => {
+        console.log("Clicked!");
+      }}
+      className={`border-border hover:bg-muted hover:text-highlight hover:border-highlight pointer-events-auto mt-5 min-w-[320px] rounded-xl border-[1px] py-5 text-center text-lg duration-500 ease-in-out md:w-full ${className}`}
       style={style}
     >
       {label}

@@ -32,7 +32,7 @@ const thumbnails: Record<string, StaticImageData> = {
 // Fade-in variants for Hero section
 const heroContainer = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.35 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.25 } },
 };
 const heroItem = {
   hidden: { opacity: 0 },
@@ -110,10 +110,8 @@ export default function Home() {
           {hasReachedProjects && (
             <>
               <TypewriterText
-                label="code:projects"
-                className="text-highlight text-shadow-highlight min-h-[3rem] self-center text-[2rem] font-bold tracking-[-0.05em] duration-300 ease-in-out text-shadow-lg/25 sm:text-[2.5rem] md:text-[3rem] lg:text-[4.5rem]"
+                label="code:projects"          
               />
-
               <div className="grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2">
                 {ProjectData.slice(0, 4).map((project, index) => (
                   <ProjectCard
